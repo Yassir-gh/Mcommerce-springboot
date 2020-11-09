@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcommerce</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
+
+</head>
+<body>
+
+<div class="jumbotron">
+    <h1>Application Mcommerce</h1>
+</div>
+
+<div class="text-center">
+    <h1>Produit</h1>
+</div>
+
+<div class="container">
+	<img th:src="${produit.image}"  class="card-img-top" />
+    <p th:text= "${produit.titre}"></p>
+    <p th:text= "${produit.description}"></p>
+    
+    <p>
+    	<a th:href="@{|/details-produit/commander-produit/${produit.id}|}" class="font-weight-bold">COMMANDER</a>
+    </p>
+</div>
+
+
+<br><br><br><br>
+<div class="container">
+<p>Forumulaire (pour tests uniquement)</p>
+<form action="#" th:action="@{/commandes}" th:object="${commande}" method="post">
+        <p>productId: <input type="text" th:field="*{productId}"  /></p>
+        <p>Date de commande: <input type="text" th:field="*{dateCommande}" /></p>
+        <p>Quantite: <input type="number" th:field="*{quantite}" /></p>
+        <p>La commande est elle payee ? : <input type="checkbox" th:field="*{commandePayee}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</div>
+
+
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

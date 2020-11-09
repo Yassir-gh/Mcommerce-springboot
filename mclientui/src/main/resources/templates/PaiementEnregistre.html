@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcommerce</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+
+</head>
+<body>
+
+
+<div class="jumbotron">
+    <h1>Application Mcommerce</h1>
+</div>
+
+
+<div class="text-center">
+	<p>Information Paiement:</p>
+</div>
+<div class="container">
+	ID PAIEMENT:
+	<p th:text= "${paiement.id}"></p>
+	ID COMMANDE:
+	<p th:text= "${paiement.idCommande}"></p>
+	MONTANT REGLE:
+	<p th:text= "${paiement.montant}"></p>
+	NUMERO CARTE UTILISEE:
+	<p th:text= "${paiement.numeroCarte}"></p>
+	
+</div>
+
+<div class="text-center">
+	<p>Information Commande:</p>
+</div>
+<div class="container">
+	ID:
+	<p th:text= "${commande.id}"></p>
+	PRODUCTID:
+	<p th:text= "${commande.productId}"></p>
+	DATE:
+	<p th:text= "${commande.dateCommande}"></p>
+	QUANTITEE:
+	<p th:text= "${commande.quantite}"></p>
+	PAIEMENT:
+	<p th:text= "${commande.commandePayee}"></p>
+	
+</div>
+
+<div class="text-center">
+	<p>
+    	<a th:href="@{|/|}" class="font-weight-bold">RETOUR ACCUEIL</a>
+ 	</p>
+</div>
+
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

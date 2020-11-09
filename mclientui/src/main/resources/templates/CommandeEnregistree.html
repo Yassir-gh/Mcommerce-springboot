@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcommerce</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+
+</head>
+<body>
+
+
+<div class="jumbotron">
+    <h1>Application Mcommerce</h1>
+</div>
+
+<div class="text-center">
+	<p>Information Commande:</p>
+</div>
+
+<div class="container">
+	ID:
+	<p th:text= "${commandeEnregistree.id}"></p>
+	PRODUCTID:
+	<p th:text= "${commandeEnregistree.productId}"></p>
+	DATE:
+	<p th:text= "${commandeEnregistree.dateCommande}"></p>
+	QUANTITEE:
+	<p th:text= "${commandeEnregistree.quantite}"></p>
+	PAIEMENT:
+	<p th:text= "${commandeEnregistree.commandePayee}"></p>
+	
+	<p>
+    	<a th:href="@{|/payer-commande/${commandeEnregistree.id}|}" class="font-weight-bold">PAYER</a>
+    </p>
+</div>
+
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
