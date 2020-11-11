@@ -22,7 +22,6 @@ import org.springframework.web.client.RestTemplate;
 import com.mclientui.beans.Commande;
 import com.mclientui.beans.ProductBean;
 import com.mclientui.beans.Paiement;
-import com.mclientui.controller.Product;
 import com.mclientui.proxies.MicroserviceCommandesProxy;
 import com.mclientui.proxies.MicroservicePaiementsProxy;
 import com.mclientui.proxies.MicroserviceProduitsProxy;
