@@ -2,6 +2,7 @@ package com.mclientui.proxies;
 
 import java.util.Optional;
 
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.mclientui.beans.Commande;
 
-@FeignClient(name="microservice-commandes", url="localhost:9002")
+@FeignClient(name="microservice-commandes")
+@RibbonClient(name="microservice-commandes")
 public interface MicroserviceCommandesProxy {
 	@PostMapping (value = "/commandes")
     public ResponseEntity<Commande> ajouterCommande(@RequestBody Commande commande);
