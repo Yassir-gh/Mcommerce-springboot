@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.mclientui.beans.Commande;
 
-@FeignClient(name="microservice-commandes")
+@FeignClient(name="spring-gateway-server")
 @RibbonClient(name="microservice-commandes")
 public interface MicroserviceCommandesProxy {
 	@PostMapping (value = "/commandes")
